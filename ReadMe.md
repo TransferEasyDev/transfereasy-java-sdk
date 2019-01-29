@@ -1,7 +1,7 @@
 
 ![TransferEasy](https://s.transfereasy.com/logo/logo-2-black.png)
-<br>
-<HR>
+
+***
     
 # 汇通天下, 无处不达
 
