@@ -1,8 +1,8 @@
 package main.java.com.transfereasy.tool;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import main.java.com.transfereasy.api.Request;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -29,6 +29,19 @@ public class Tool {
         Properties props = Tool.getProp();
         return props.getProperty("SECRET");
     }
+
+    public static String getPublicKey() throws IOException {
+        Properties props = Tool.getProp();
+        String key_path = props.getProperty("PUBLIC_KEY_PATH");
+
+        FileInputStream inputStream = new FileInputStream(key_path);
+        byte[] keyBytes = new byte[inputStream.available()];
+        int i = inputStream.read(keyBytes);
+        inputStream.close();
+        return new String(keyBytes, "UTF-8");
+
+    }
+
 
 
 }
