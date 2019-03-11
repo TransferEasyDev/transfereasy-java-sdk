@@ -2,7 +2,9 @@ package main.java.com.transfereasy.example.account;
 
 import main.java.com.transfereasy.api.Account;
 import main.java.com.transfereasy.entity.account.CompanyDocResponse;
+import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.protocol.HTTP;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,25 +15,25 @@ public class CompanyReidentification {
 
         MultipartEntityBuilder params = MultipartEntityBuilder.create();
 
-        params.addTextBody("org_name", "org_name");
-        params.addTextBody("office_op_address", "office_op_address");
-        params.addTextBody("contact_name", "contact_name");
-        params.addTextBody("contact_email", "contact_email");
-        params.addTextBody("contact_phone", "contact_phone");
-        params.addTextBody("contact_country", "contact_country");
-        params.addTextBody("contact_address", "contact_address");
-        params.addTextBody("contact_position", "contact_position");
-        params.addTextBody("website", "website");
-        params.addTextBody("company_type", "company_type");
-        params.addTextBody("industry", "industry");
-        params.addTextBody("major_funds_source", "major_funds_source");
-        params.addTextBody("year_transfer_amount", "year_transfer_amount");
-        params.addTextBody("piece_transfer_amount", "piece_transfer_amount");
-        params.addTextBody("credit_code", "credit_code");
-        params.addTextBody("business_code", "business_code");
-        params.addTextBody("business_country", "CHN");
-        params.addTextBody("register_country", "HKG");
-        params.addTextBody("issue_bearer_share", "true");
+        params.addTextBody("org_name", "org_name", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("office_op_address", "office_op_address", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("contact_name", "contact_name", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("contact_email", "contact_email", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("contact_phone", "contact_phone", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("contact_country", "contact_country", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("contact_address", "contact_address", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("contact_position", "contact_position", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("website", "website", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("company_type", "company_type", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("industry", "industry", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("major_funds_source", "major_funds_source", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("year_transfer_amount", "year_transfer_amount", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("piece_transfer_amount", "piece_transfer_amount", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("credit_code", "credit_code", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("business_code", "business_code", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("business_country", "CHN", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("register_country", "HKG", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
+        params.addTextBody("issue_bearer_share", "true", ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
 
         params.addBinaryBody("license_file", new File("/file_path/upload.png"));
         params.addBinaryBody("office_reg_addr_evd_file", new File("/file_path/upload.png"));

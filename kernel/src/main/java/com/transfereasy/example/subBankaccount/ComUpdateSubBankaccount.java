@@ -2,7 +2,9 @@ package main.java.com.transfereasy.example.subBankaccount;
 
 import main.java.com.transfereasy.api.SubBankAccount;
 import main.java.com.transfereasy.entity.subBankaccount.ApplyResponse;
+import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.protocol.HTTP;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -60,7 +62,7 @@ public class ComUpdateSubBankaccount {
 
         MultipartEntityBuilder params = MultipartEntityBuilder.create();
 
-        params.addTextBody("apply_data", datas.toString());
+        params.addTextBody("apply_data", datas.toString(), ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
 
 
         params.addBinaryBody("license_file", new File("/file_path/upload.png"));

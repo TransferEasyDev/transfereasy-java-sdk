@@ -27,7 +27,7 @@ public class CreateBankAccount {
         jo.put("bank", bo);
         jo.put("country", "HKG");
         jo.put("currency", "HKD");
-        jo.put("bank_account_number", "TEST-499");
+        jo.put("bank_account_number", "TEST-099");
         jo.put("holder", ho);
         jo.put("purpose", "PAYER");
         jo.put("iban", "00");
