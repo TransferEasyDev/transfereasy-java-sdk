@@ -3,10 +3,8 @@ package main.java.com.transfereasy.example;
 import main.java.com.transfereasy.api.TransfereasySignature;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.lang.reflect.Field;
+import java.util.*;
 
 
 /**
@@ -17,6 +15,22 @@ import java.util.List;
  * 3. header中的Timestamp值为时间戳, 如有需要, 可以验证本次请求是否超时。
  */
 public class CallBackVerify {
+
+    public static Map<String, Object> objectToTreeMap(Object obj) throws Exception {
+        if(obj == null){
+            return null;
+        }
+
+        TreeMap<String, Object> map = new TreeMap<String, Object>();
+
+        Field[] declaredFields = obj.getClass().getDeclaredFields();
+        for (Field field : declaredFields) {
+            field.setAccessible(true);
+            map.put(field.getName(), field.get(obj));
+        }
+
+        return map;
+    }
     public static void main(String[] args) throws Exception {
         String signature = "Hn05mLFggEd0B9SJP7rcSNdolhURUG/CW4wu5sIWXmrb17P7fqTVhKC2R7W80qTLpHoHs0xsgE/tEo9/e87FdkArtf2TqnqyxdW23WUXx8La5JbvMiAFvHlfZeTY2CzUmTyyEqn5oPEiUo1riXVAIcPbuSrrQXO3ObbfPIAozyn4V4vFUUmMDXJB9JeG8VnVKU0Ja5ov3H3m5TUkzeksSosfLRzA2Z9/C+z2HiHOymkSohJUkfIC3pc7UTI1K0QhMQhZHFM0or+GSGMvKL4ypLg1ZFBJ12QYfdGs4X9a6KiHkjQAGcTxCliQUs/yHcWUDJvbXNB3wVDcJUPYUx86/g==";
         // 已排序的json字符串
