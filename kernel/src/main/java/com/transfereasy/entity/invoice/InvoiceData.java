@@ -1,13 +1,14 @@
 package main.java.com.transfereasy.entity.invoice;
 
-import lombok.Data;
-import main.java.com.transfereasy.entity.bankaccount.BaData;;
+import lombok.EqualsAndHashCode;
+import main.java.com.transfereasy.entity.bankaccount.BaData;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-public class InvoiceData {
+@EqualsAndHashCode(callSuper = true)
+@lombok.Data
+public class InvoiceData extends main.java.com.transfereasy.entity.Data {
 
     private String created;
     private BaData escrow_account = new BaData();

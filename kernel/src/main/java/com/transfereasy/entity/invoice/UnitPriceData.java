@@ -1,9 +1,10 @@
 package main.java.com.transfereasy.entity.invoice;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Data
-public class UnitPriceData {
+@EqualsAndHashCode(callSuper = true)
+@lombok.Data
+public class UnitPriceData extends main.java.com.transfereasy.entity.Data {
     private String amount;
     private String currency;
 }

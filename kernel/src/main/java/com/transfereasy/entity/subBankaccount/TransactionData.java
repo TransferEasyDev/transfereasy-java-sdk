@@ -1,9 +1,10 @@
 package main.java.com.transfereasy.entity.subBankaccount;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Data
-public class TransactionData {
+@EqualsAndHashCode(callSuper = true)
+@lombok.Data
+public class TransactionData extends main.java.com.transfereasy.entity.Data {
         private String credit_amount;
         private String currency;
         private String debit_amount;

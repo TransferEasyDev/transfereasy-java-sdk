@@ -16,6 +16,7 @@ public class Invoice {
         Request re = new Request();
 
         String msg = re.requestPost(Tool.getHost() + "/invoice", params);
+        System.out.println(msg);
         Gson gson = new GsonBuilder().create();
         return gson.fromJson(msg, Response.class);
     }

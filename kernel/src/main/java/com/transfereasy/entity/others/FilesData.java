@@ -1,11 +1,12 @@
 package main.java.com.transfereasy.entity.others;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-public class FilesData {
+@EqualsAndHashCode(callSuper = true)
+@lombok.Data
+public class FilesData extends main.java.com.transfereasy.entity.Data {
     private List file_urls = new ArrayList();
 }

@@ -1,12 +1,13 @@
 package main.java.com.transfereasy.entity.transfer;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-public class TransferData {
+@EqualsAndHashCode(callSuper = true)
+@lombok.Data
+public class TransferData extends main.java.com.transfereasy.entity.Data {
     private List<BeneficiaryData> beneficiaries = new ArrayList<BeneficiaryData>();
     private String cutoff_time;
     private String delivery_time;

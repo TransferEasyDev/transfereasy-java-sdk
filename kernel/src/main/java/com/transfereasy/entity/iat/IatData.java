@@ -1,9 +1,10 @@
 package main.java.com.transfereasy.entity.iat;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Data
-public class IatData {
+@EqualsAndHashCode(callSuper = true)
+@lombok.Data
+public class IatData extends main.java.com.transfereasy.entity.Data {
     private String amount;
     private String beneficiary_account_no;
     private String created;

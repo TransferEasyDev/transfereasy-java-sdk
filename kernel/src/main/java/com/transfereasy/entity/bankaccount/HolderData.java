@@ -1,9 +1,10 @@
 package main.java.com.transfereasy.entity.bankaccount;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Data
-class HolderData {
+@EqualsAndHashCode(callSuper = true)
+@lombok.Data
+class HolderData extends main.java.com.transfereasy.entity.Data {
     private String name;
     private String doc_type;
     private String doc_number;

@@ -1,9 +1,10 @@
 package main.java.com.transfereasy.entity.bankaccount;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Data
-class BankData {
+@EqualsAndHashCode(callSuper = true)
+@lombok.Data
+class BankData extends main.java.com.transfereasy.entity.Data {
     private String name;
     private String branch;
     private String swift_code;

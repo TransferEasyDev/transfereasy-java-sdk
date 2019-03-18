@@ -1,8 +1,9 @@
 package main.java.com.transfereasy.entity.subBankaccount;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Data
-public class ApplyData {
+@EqualsAndHashCode(callSuper = true)
+@lombok.Data
+public class ApplyData extends main.java.com.transfereasy.entity.Data {
     private String apply_no;
 }

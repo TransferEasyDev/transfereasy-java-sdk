@@ -1,7 +1,11 @@
 package main.java.com.transfereasy.entity.exchange;
 
+import lombok.EqualsAndHashCode;
+import main.java.com.transfereasy.entity.Data;
+
+@EqualsAndHashCode(callSuper = true)
 @lombok.Data
-class ExData {
+class ExData extends Data {
     private String buy_amount;
     private String buy_currency;
     private String charge_amount;

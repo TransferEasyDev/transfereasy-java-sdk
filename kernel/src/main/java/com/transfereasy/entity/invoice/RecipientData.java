@@ -1,9 +1,10 @@
 package main.java.com.transfereasy.entity.invoice;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Data
-public class RecipientData {
+@EqualsAndHashCode(callSuper = true)
+@lombok.Data
+public class RecipientData extends main.java.com.transfereasy.entity.Data {
     private AddressData address = new AddressData();
     private String bank_account_number;
     private String bank_name;

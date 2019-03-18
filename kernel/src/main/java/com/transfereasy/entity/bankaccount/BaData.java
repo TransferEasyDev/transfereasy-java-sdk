@@ -1,7 +1,11 @@
 package main.java.com.transfereasy.entity.bankaccount;
 
+import lombok.EqualsAndHashCode;
+import main.java.com.transfereasy.entity.Data;
+
+@EqualsAndHashCode(callSuper = true)
 @lombok.Data
-public class BaData {
+public class BaData extends Data {
     private BankData bank = new BankData();
     private String country;
     private String currency;

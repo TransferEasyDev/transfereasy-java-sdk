@@ -60,7 +60,7 @@ public class CreateInvoice {
         jo.put("recipient", recipient);
         jo.put("products", products);
         jo.put("memo", "Thank you for your business.");
-        jo.put("out_trade_id", "2018080700361623156020079");
+//        jo.put("out_trade_id", "2018080700361623156020079");
         jo.put("currency", "USD");
         jo.put("amount", 420);
 

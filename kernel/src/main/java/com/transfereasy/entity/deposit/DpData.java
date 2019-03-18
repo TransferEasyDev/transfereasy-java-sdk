@@ -1,9 +1,12 @@
 package main.java.com.transfereasy.entity.deposit;
 
+import lombok.EqualsAndHashCode;
+import main.java.com.transfereasy.entity.Data;
 import main.java.com.transfereasy.entity.bankaccount.BaData;
 
+@EqualsAndHashCode(callSuper = true)
 @lombok.Data
-class DpData {
+class DpData extends Data {
     private String created;
     private BaData escrow_bank_account = new BaData();
     private String estimated_amount;
