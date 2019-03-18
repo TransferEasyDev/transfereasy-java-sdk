@@ -17,8 +17,8 @@ public class InvoiceData {
     private String invoice_currency;
     private String received_amount;
     private String received_currency;
-    private Boolean is_canceled = false;
-    private Boolean is_credit = false;
+    private Boolean is_canceled;
+    private Boolean is_credit;
     private String memo;
     private String no;
     private String reference;
