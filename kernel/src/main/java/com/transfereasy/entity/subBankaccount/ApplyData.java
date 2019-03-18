@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class ApplyData {
-    private String apply_no = "";
+    private String apply_no;
 }

@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class UnitPriceData {
-    private String amount = "";
-    private String currency = "";
+    private String amount;
+    private String currency;
 }
