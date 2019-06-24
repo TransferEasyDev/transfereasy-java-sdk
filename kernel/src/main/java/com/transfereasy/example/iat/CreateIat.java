@@ -19,6 +19,7 @@ public class CreateIat {
         jo.put("send_currency", "USD");
         jo.put("purpose", "留学");
         jo.put("memo", "测试");
+//        params.add(new BasicNameValuePair("out_trade_id", "your_trade_id"));
 
         Response response = api.createIat(jo);
         System.out.println("======response结果=======");

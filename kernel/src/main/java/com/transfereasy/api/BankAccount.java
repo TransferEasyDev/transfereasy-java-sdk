@@ -24,6 +24,24 @@ public class BankAccount {
 
     }
 
+    public Response updateBankAccount(JSONObject params) throws IOException {
+        Request re = new Request();
+
+        String msg = re.requestPut(Tool.getHost() + "/account/bank_account", params);
+        Gson gson = new GsonBuilder().create();
+        return gson.fromJson(msg, Response.class);
+
+    }
+
+    public Response deleteBankAccount(List<NameValuePair> params) throws IOException {
+        Request re = new Request();
+
+        String msg = re.requestDelete(Tool.getHost() + "/account/bank_account", params);
+        Gson gson = new GsonBuilder().create();
+        return gson.fromJson(msg, Response.class);
+
+    }
+
     public ListResponse createBankAccounts(JSONArray params) throws IOException {
         Request re = new Request();
 

@@ -15,6 +15,7 @@ public class GetExchange {
 
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("no", "exchange_no"));
+//        params.add(new BasicNameValuePair("out_trade_id", "your_trade_id"));
 
         Response response = api.getExchange(params);
         System.out.println("======response结果=======");

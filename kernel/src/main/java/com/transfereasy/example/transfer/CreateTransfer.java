@@ -19,11 +19,11 @@ public class CreateTransfer {
 
         beneficiary1.put("currency", "HKD");
         beneficiary1.put("amount", 200);
-        beneficiary1.put("bank_account_number", "TEST-777");
+        beneficiary1.put("bank_account_number", "KONG-TEST-777");
 
         beneficiary2.put("currency", "HKD");
         beneficiary2.put("amount", 1000);
-        beneficiary2.put("bank_account_number", "TEST-777");
+        beneficiary2.put("bank_account_number", "KONG-TEST-777");
 
         beneficiaries.put(beneficiary1);
         beneficiaries.put(beneficiary2);
@@ -33,6 +33,7 @@ public class CreateTransfer {
         jo.put("send_currency", "CNH");
         jo.put("purpose", "留学");
         jo.put("memo", "测试");
+//        params.add(new BasicNameValuePair("out_trade_id", "your_trade_id"));
 
         Response response = api.createTransfer(jo);
         System.out.println("======response结果=======");

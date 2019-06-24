@@ -11,24 +11,13 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 
-public class indCreateSubBankaccount {
+public class CreateSubBankaccount {
     public static void main(String[] args) throws IOException,JSONException {
         SubBankAccount sbacc = new SubBankAccount();
 
-        JSONObject datas = new JSONObject();
-        JSONObject individual = new JSONObject();
+        JSONObject params = new JSONObject();
         JSONObject shop = new JSONObject();
-        JSONObject subBankaccount = new JSONObject();
 
-        individual.put("name", "name");
-        individual.put("country_code", "USA");
-        individual.put("mobile", "mobile");
-        individual.put("doc_type", "ID");
-        individual.put("doc_number", "doc_number");
-        individual.put("address", "address");
-
-        subBankaccount.put("currency", "USD");
-        subBankaccount.put("country", "USA");
 
         shop.put("type", "AMAZON");
         shop.put("name", "name");
@@ -42,22 +31,11 @@ public class indCreateSubBankaccount {
         shop.put("access_key", "access_key");
         shop.put("secret_key", "secret_key");
 
-        datas.put("individual", individual);
-        datas.put("sub_bank_account", subBankaccount);
-        datas.put("shop", shop);
+        params.put("country", "USA");
+        params.put("shop", shop);
 
 
-        MultipartEntityBuilder params = MultipartEntityBuilder.create();
-
-        params.addTextBody("apply_data", datas.toString(), ContentType.create(HTTP.PLAIN_TEXT_TYPE, HTTP.UTF_8));
-
-
-        params.addBinaryBody("id_file_front", new File("/file_path/upload.png"));
-        params.addBinaryBody("id_file_back", new File("/file_path/upload.png"));
-        params.addBinaryBody("passport_file", new File("/file_path/upload.png"));
-        params.addBinaryBody("address_evd_file", new File("/file_path/upload.png"));
-
-        ApplyResponse response = sbacc.indCreateSubBankAccount(params);
+        ApplyResponse response = sbacc.createSubBankAccount(params);
         System.out.println("======response结果=======");
         System.out.println(response.getData());
         System.out.println(response.getMeta());

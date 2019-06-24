@@ -17,6 +17,7 @@ public class CreateExchange {
         jo.put("buy_currency", "USD");
         jo.put("sell_currency", "CNH");
         jo.put("sell_amount", 1000);
+//        params.add(new BasicNameValuePair("out_trade_id", "your_trade_id"));
 
         Response response = api.createExchange(jo);
         System.out.println("======response结果=======");

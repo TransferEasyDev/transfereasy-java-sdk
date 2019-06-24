@@ -15,6 +15,7 @@ public class GetIat {
 
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("no", "iat_no"));
+//        params.add(new BasicNameValuePair("out_trade_id", "your_trade_id"));
 
         Response response = api.getIat(params);
         System.out.println("======response结果=======");

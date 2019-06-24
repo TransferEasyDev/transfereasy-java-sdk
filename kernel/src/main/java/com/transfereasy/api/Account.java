@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import main.java.com.transfereasy.entity.account.AccountResponse;
 import main.java.com.transfereasy.entity.account.CompanyDocResponse;
 import main.java.com.transfereasy.entity.account.IndividualDocResponse;
+import main.java.com.transfereasy.entity.account.DevelopmentResponse;
 import main.java.com.transfereasy.tool.Tool;
 import org.apache.http.NameValuePair;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -20,6 +21,13 @@ public class Account {
         String msg = re.requestPostWithoutToken(Tool.getHost() + "/account", params);
         Gson gson = new GsonBuilder().create();
         return gson.fromJson(msg, AccountResponse.class);
+    }
+
+    public DevelopmentResponse development(List<NameValuePair> params) throws IOException {
+        Request re = new Request();
+        String msg = re.requestPost(Tool.getHost() + "/development", params);
+        Gson gson = new GsonBuilder().create();
+        return gson.fromJson(msg, DevelopmentResponse.class);
     }
 
     public AccountResponse getAccount(List<NameValuePair> params) throws IOException {

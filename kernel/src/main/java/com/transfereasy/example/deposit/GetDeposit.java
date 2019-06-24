@@ -15,6 +15,7 @@ public class GetDeposit {
 
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("no", "deposit_no"));
+//        params.add(new BasicNameValuePair("out_trade_id", "your_trade_id"));
 
         Response response = api.getDeposit(params);
         System.out.println("======response结果=======");

@@ -15,6 +15,8 @@ public class RepetitionIat {
 
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("no", "iat_no"));
+//        params.add(new BasicNameValuePair("ex_out_trade_id", "your_trade_id"));
+//        params.add(new BasicNameValuePair("new_out_trade_id", "your_trade_id"));
 
         Response response = api.repetitionIat(params);
         System.out.println("======response结果=======");

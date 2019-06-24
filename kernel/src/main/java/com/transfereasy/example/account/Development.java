@@ -1,7 +1,7 @@
-package main.java.com.transfereasy.example.transfer;
+package main.java.com.transfereasy.example.account;
 
-import main.java.com.transfereasy.api.Transfer;
-import main.java.com.transfereasy.entity.transfer.Response;
+import main.java.com.transfereasy.api.Account;
+import main.java.com.transfereasy.entity.account.DevelopmentResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
@@ -9,18 +9,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GetTransfer {
+public class Development {
     public static void main(String[] args) throws IOException {
-        Transfer api = new Transfer();
-
+        Account acc = new Account();
         List<NameValuePair> params = new ArrayList<NameValuePair>();
-        params.add(new BasicNameValuePair("no", "transfer_no"));
-//        params.add(new BasicNameValuePair("out_trade_id", "your_trade_id"));
 
-        Response response = api.getTransfer(params);
+        params.add(new BasicNameValuePair("account", "your_account"));
+        params.add(new BasicNameValuePair("password", "your_password"));
+
+        DevelopmentResponse response = acc.development(params);
         System.out.println("======response结果=======");
         System.out.println(response.getData());
         System.out.println(response.getMeta());
-
     }
 }
