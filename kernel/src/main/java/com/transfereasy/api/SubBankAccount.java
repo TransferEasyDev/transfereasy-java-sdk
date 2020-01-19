@@ -15,16 +15,16 @@ import java.util.List;
 
 public class SubBankAccount {
 
-    public ApplyResponse createSubBankAccount(JSONObject params) throws IOException {
+    public ApplyResponse createSubBankAccount(List<NameValuePair> params) throws IOException {
         Request re = new Request();
-        String msg = re.requestPost(Tool.getHost() + "/account/company/sub_bank_account", params);
+        String msg = re.requestPost(Tool.getHost() + "/account/sub_bank_account", params);
         Gson gson = new GsonBuilder().create();
         return gson.fromJson(msg, ApplyResponse.class);
     }
 
-    public ApplyResponse updateSubBankAccount(JSONObject params) throws IOException {
+    public ApplyResponse updateSubBankAccount(List<NameValuePair> params) throws IOException {
         Request re = new Request();
-        String msg = re.requestPut(Tool.getHost() + "/account/company/sub_bank_account", params);
+        String msg = re.requestPut(Tool.getHost() + "/account/sub_bank_account", params);
         Gson gson = new GsonBuilder().create();
         return gson.fromJson(msg, ApplyResponse.class);
     }
